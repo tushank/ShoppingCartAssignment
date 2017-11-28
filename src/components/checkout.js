@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 class Checkout extends Component {
     constructor(props) {
         super(props);
-        this.state = { couponCode: '', applyCouponFlag: false};
+        this.state = { couponCode: '', applyCouponFlag: false, selectedProduct: 0};
         this.renderProductItem = this.renderProductItem.bind(this);
         this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);

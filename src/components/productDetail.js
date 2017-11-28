@@ -25,7 +25,7 @@ class ProductDetail extends Component {
                         <h2 className="cust-margin"><label>Rs {this.props.productData.price}</label></h2>
                         </div>
                         <div className="col-md-12 col-sm-12 col-xs-12">
-                        <a className="btn btn-success btn-product" disabled={this.state.clickAddToCart} onClick={() => {this.props.selectProduct(this.props.productData); this.setState({ clickAddToCart: true})}}>
+                        <a className="btn btn-success btn-product" disabled={this.state.clickAddToCart} onClick={() => { if(!this.state.clickAddToCart){this.props.selectProduct(this.props.productData); this.setState({ clickAddToCart: true})}}}>
                             <span className="glyphicon glyphicon-shopping-cart">
                             </span> Add To Cart
                         </a>

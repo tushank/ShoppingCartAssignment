@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.renderProductNumber = this.renderProductNumber.bind(this);
+    }
+
+    renderProductNumber(activeProductList) {
+        if(activeProductList > 0) {
+            return <span>[{activeProductList}]</span>
+        }
+    }
+
     render() {
         return(
             <nav className="navbar navbar-default">
@@ -12,7 +25,7 @@ class Header extends Component {
                 <ul className="nav navbar-nav">
                     <li className="active"><Link to='/'>Home</Link></li>
                     <li><Link to='/cart'>Cart</Link ></li>
-                    <li><Link to='/checkout'>Checkout</Link></li>
+                    <li><Link to='/checkout'>Checkout<span>{this.renderProductNumber(this.props.ActiveProduct.length)}</span></Link></li>
                     <li><Link to='/about'>AboutUs</Link></li>
                 </ul>
                 </div>
@@ -21,4 +34,10 @@ class Header extends Component {
     }
 }
 
-export default Header;
+function mapStateToProps(state) {
+    return {
+        ActiveProduct: state.ActiveProduct
+    };
+}
+
+export default connect(mapStateToProps)(Header);
