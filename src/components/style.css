@@ -1,0 +1,32 @@
+
+.btn-product{
+    width: 100%;
+}
+
+.cust-margin {
+    margin:5px auto;
+}
+
+
+.box {
+    padding: 2%;
+    margin: 1% 0%;
+    background:#f6f6f6;
+}
+.effect1{
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.dash{
+    border: 0 none;
+    border-top: 2px dashed #322f32;
+    background: none;
+    height:0;
+  }
+
+.input-box-cust-style {
+    width: 50%;
+    margin-left: 3%;
+}
